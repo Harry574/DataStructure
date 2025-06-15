@@ -38,7 +38,8 @@ void LinkedBinaryTree::expandExternal(const Position &p, Elem left_e, Elem right
 
 LinkedBinaryTree::Position 
 LinkedBinaryTree::removeAboveExternal(const Position& p) { // remove p and parent
-	Node* w = p.v;Node* v = w->par;			// get p's node and parent
+	Node* w = p.v;                           // get p's node
+	Node* v = w->par;			// get p's parent node
 	Node* sib = (w == v->left ?v->right : v->left);
 	if (v == _root) {					// child of root?
 		_root = sib;					// ...make sibling root
